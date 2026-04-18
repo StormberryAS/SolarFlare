@@ -1,0 +1,21 @@
+SolarFlare – Space‑Weather Alerts
+
+Core Functionality:
+- Display real‑time solar‑flare activity, geomagnetic storms and aurora forecasts.
+- Colour‑coded severity cards (green → red).
+- Optional browser push notifications for high‑impact events.
+
+Why it fits:
+- Complements SunApp’s solar‑position calculations.
+- Provides a daily‑use reason to visit the site.
+- Can be powered by a static JSON feed that is updated periodically (still privacy‑first).
+
+Potential UI Elements:
+- Glass‑morphism alert card with pulsating border for active flares.
+- Timeline list of recent events.
+- Simple toggle to enable/disable notifications.
+
+Design & Development Rules:
+- All pages must have footers as similar to SunApp as possible.
+- The favicon in SVG must be in the mainhead.
+- Once ready, I want to see it in localhost before we git push it.
