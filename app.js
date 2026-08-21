@@ -152,8 +152,12 @@ const citySelected = document.getElementById('city-selected');
 const citySelectedText = document.getElementById('city-selected-text');
 const cityClearBtn = document.getElementById('city-clear-btn');
 
+// Delegates to foldQuery in the shared cities.js. The previous local version
+// was NFD-only, which cannot split atomic letters like 'o-slash', so "tromso"
+// never matched "Tromso-with-slash". Keeping one implementation means that
+// class of bug is fixed everywhere at once.
 function normalizeStr(s) {
-  return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  return foldQuery(s);
 }
 
 searchInput.addEventListener('input', (e) => {
@@ -166,10 +170,16 @@ searchInput.addEventListener('input', (e) => {
   }
   
   // Basic substring match
-  const matches = CITIES.filter(c => 
-    normalizeStr(c.name).includes(query) || 
-    normalizeStr(c.country).includes(query)
-  ).slice(0, 10);
+  // Prefix matches first. With 25,000 cities a bare substring filter
+  // buries the obvious answer: "erdal" returned Cloverdale, South
+  // Riverdale and Terdal ahead of Erdal, and with only 10 rows shown the
+  // city being typed could fall off the list entirely.
+  const startsWith = [], contains = [];
+  for (const c of CITIES) {
+    if (c.fold.startsWith(query)) startsWith.push(c);
+    else if (c.fold.includes(query) || c.cfold.includes(query)) contains.push(c);
+  }
+  const matches = startsWith.concat(contains).slice(0, 10);
   
   if (matches.length > 0) {
     dropdown.hidden = false;
