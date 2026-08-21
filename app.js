@@ -176,8 +176,10 @@ searchInput.addEventListener('input', (e) => {
   // city being typed could fall off the list entirely.
   const startsWith = [], contains = [];
   for (const c of CITIES) {
-    if (c.fold.startsWith(query)) startsWith.push(c);
-    else if (c.fold.includes(query) || c.cfold.includes(query)) contains.push(c);
+    // c.alt is the folded English exonym where GeoNames stores the local
+    // name, so "gothenburg" finds Goteborg and "cologne" finds Koeln.
+    if (c.fold.startsWith(query) || c.alt.startsWith(query)) startsWith.push(c);
+    else if (c.fold.includes(query) || c.alt.includes(query) || c.cfold.includes(query)) contains.push(c);
   }
   const matches = startsWith.concat(contains).slice(0, 10);
   
