@@ -33,3 +33,13 @@ Open `http://localhost:3002` in your browser.
 
 ## Credits
 Built by [Stormberry AS](https://stormberry.as). Proudly powered by sovereign AI agents.
+
+## Disclaimer
+
+Supplied free of charge, **as is**, with no warranty of any kind. Using it creates no client or advisory relationship with Stormberry AS, and nothing it produces is professional advice.
+
+**The space-weather figures in SolarFlare are simulated, not observed.** They are produced by a seeded deterministic algorithm so that the display is stable and repeatable offline. They are not measurements, not a forecast, and bear no relation to actual solar or geomagnetic activity. For real space weather use [NOAA SWPC](https://www.swpc.noaa.gov/).
+
+This is a **functioning prototype**, not a certified instrument and not a professional service. **Its readings are simulated and are not real data.** Do not use it as a source for any decision at all. Stormberry AS reimburses no cost or loss arising from use of this application.
+
+Full terms: [DISCLAIMER.md](DISCLAIMER.md).
