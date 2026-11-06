@@ -4,8 +4,9 @@
 
 /**
  * SolarFlare: core application logic.
- * A fully offline pseudo-random simulation of space weather, with a local impact for the chosen
- * city (its latitude, and day or night there from SunCalc).
+ * A pseudo-random simulation of space weather that runs entirely in the browser (it fetches no
+ * data), with a local impact for the chosen city (its latitude, and day or night there from
+ * SunCalc).
  *
  * A classic script, not a module: index.html loads suncalc.js (the vendored SunCalc 1.8.0, which
  * publishes the global SunCalc, typed in ts/suncalc.d.ts) and cities.js (the shared Labs city

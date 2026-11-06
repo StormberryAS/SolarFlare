@@ -1,12 +1,12 @@
 # SolarFlare
 
-Privacy-first space-weather dashboard. SolarFlare simulates real-time solar-flare activity, geomagnetic storm (Kp index) monitoring, and aurora forecasts, using offline pseudo-random algorithms and local daylight detection.
+Privacy-first space-weather dashboard. SolarFlare simulates real-time solar-flare activity, geomagnetic storm (Kp index) monitoring, and aurora forecasts, using pseudo-random algorithms that run in your browser and local daylight detection.
 
 **Live:** [flare.stormberry.as](https://flare.stormberry.as)
 
 ## Features
 - **Space-weather simulation**: consistent daily forecast using seeded pseudo-random orbital mechanics algorithms.
-- **City search**: rapid, offline autocomplete for 25,007 cities to provide localised impact analysis.
+- **City search**: rapid autocomplete for 25,007 cities, from a catalogue the page loads with it, to provide localised impact analysis.
 - **Aurora visibility**: localised aurora forecast dynamically calculated based on city latitude and current Kp index.
 - **Radio blackout warnings**: localised dayside calculations to determine if radio frequency blackouts affect your region.
 - **Responsive layout**: optimised for mobile and desktop with a cinematic "hot plasma" glassmorphism theme.
@@ -16,7 +16,7 @@ Privacy-first space-weather dashboard. SolarFlare simulates real-time solar-flar
 - **TypeScript source in `ts/`, compiled JavaScript committed.** `ts/app.ts` compiles to `app.js`, at the same path the page has always loaded, as a classic script (no modules). The compiled file is committed because GitHub Pages serves the repository as it is, with no build step of its own; `.gitattributes` marks it as generated. Edit the TypeScript, never the `.js`.
 - **Vendored and generated files kept as they are.** `suncalc.js` is SunCalc 1.8.0, vendored unchanged; `ts/suncalc.d.ts` types it. `cities.js` is the shared Stormberry Labs city catalogue, written by SunApp's `update_cities.py`; `ts/cities.d.ts` types it. `gate.js` and `gate.css`, the first-run notice, are written by the shared `build-gates.py`. None of them is edited here.
 - **Build:** `npm run build` (`tools/build-ts.sh`) installs the pinned compiler (`npm ci`), compiles, then runs `bump_assets.py` to restamp the `?v=` cache stamps. `npm run check` changes nothing and fails when the committed JavaScript is not what the TypeScript compiles to. `npm test` runs the tests in `tests/` with the test runner built into Node 24. The published app has no runtime dependencies.
-- **Privacy first**, no cookies, no tracking. Zero external API calls. The entire simulation runs offline within the browser.
+- **Privacy first**, no cookies, no tracking. Zero external API calls. The entire simulation runs in your browser and nothing is sent to a server. The page needs the network to load; it has no service worker, so it does not promise to work offline.
 - Stormberry dark-mode glassmorphism design system, Inter typography.
 - **Sovereign AI**, built and maintained using high-speed agentic workflows.
 
