@@ -6,7 +6,7 @@ Privacy-first space-weather dashboard. SolarFlare simulates real-time solar-flar
 
 ## Features
 - **Space-weather simulation**: consistent daily forecast using seeded pseudo-random orbital mechanics algorithms.
-- **City search**: rapid, offline autocomplete for 2,000+ major cities to provide localised impact analysis.
+- **City search**: rapid, offline autocomplete for 25,007 cities to provide localised impact analysis.
 - **Aurora visibility**: localised aurora forecast dynamically calculated based on city latitude and current Kp index.
 - **Radio blackout warnings**: localised dayside calculations to determine if radio frequency blackouts affect your region.
 - **Responsive layout**: optimised for mobile and desktop with a cinematic "hot plasma" glassmorphism theme.
