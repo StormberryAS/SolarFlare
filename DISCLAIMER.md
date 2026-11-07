@@ -33,7 +33,7 @@ matter with its own written agreement, and this is not it.
 
 ## Specific to SolarFlare
 
-**The space-weather figures in SolarFlare are simulated, not observed.** They are produced by a seeded deterministic algorithm so that the display is stable and repeatable offline. They are not measurements, not a forecast, and bear no relation to actual solar or geomagnetic activity. For real space weather use [NOAA SWPC](https://www.swpc.noaa.gov/).
+**The space-weather figures in SolarFlare are simulated, not observed.** They are produced by a seeded deterministic algorithm, so the same date always shows the same figures. They are not measurements, not a forecast, and bear no relation to actual solar or geomagnetic activity. For real space weather use [NOAA SWPC](https://www.swpc.noaa.gov/).
 
 ## No warranty
 
